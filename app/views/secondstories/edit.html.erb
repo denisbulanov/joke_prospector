@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @secondstory.errors.any? %>
+  <% @secondstory.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Secondstory #<%= @secondstory.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_secondstory/<%= @secondstory.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for punch_line -->
+      <div class="form-group">
+        <label for="punch_line" class="control-label">
+          Punch line
+        </label>
+
+        <textarea id="punch_line" name="punch_line" placeholder="Punch line" class="form-control" rows="3"><%= @secondstory.punch_line %></textarea>
+      </div>
+
+      <!-- Label and input for body -->
+      <div class="form-group">
+        <label for="body" class="control-label">
+          Body
+        </label>
+
+        <textarea id="body" name="body" placeholder="Body" class="form-control" rows="3"><%= @secondstory.body %></textarea>
+      </div>
+
+      <!-- Label and input for reinterpretation_id -->
+      <div class="form-group">
+        <label for="reinterpretation_id" class="control-label">
+          Reinterpretation
+        </label>
+
+        <input type="text" id="reinterpretation_id" name="reinterpretation_id" placeholder="Reinterpretation" class="form-control" value="<%= @secondstory.reinterpretation_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Secondstory
+      </button>
+      or
+      <a href="/secondstories/<%= @secondstory.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

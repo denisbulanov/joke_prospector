@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Assumption #<%= @assumption.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Connector</dt>
+      <dd><%= @assumption.connector %></dd>
+
+      <dt>Body</dt>
+      <dd><%= @assumption.body %></dd>
+
+      <dt>Setup</dt>
+      <dd><%= @assumption.setup_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/assumptions" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/assumptions/<%= @assumption.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_assumption/<%= @assumption.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

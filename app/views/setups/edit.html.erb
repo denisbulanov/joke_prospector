@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @setup.errors.any? %>
+  <% @setup.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Setup #<%= @setup.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_setup/<%= @setup.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for body -->
+      <div class="form-group">
+        <label for="body" class="control-label">
+          Body
+        </label>
+
+        <textarea id="body" name="body" placeholder="Body" class="form-control" rows="3"><%= @setup.body %></textarea>
+      </div>
+
+      <button class="btn btn-warning">
+        Update Setup
+      </button>
+      or
+      <a href="/setups/<%= @setup.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

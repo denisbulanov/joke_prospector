@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>
+    Secondstories
+    <a href="/secondstories/new" class="btn btn-lg btn-success">New Secondstory</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Punch line</th>
+        <th>Body</th>
+        <th>Reinterpretation</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @secondstories.each do |secondstory| %>
+      <tr>
+        <td><%= secondstory.punch_line %></td>
+        <td><%= secondstory.body %></td>
+        <td><%= secondstory.reinterpretation_id %></td>
+        <td>
+          <a href="/secondstories/<%= secondstory.id %>" class="btn btn-primary">Show</a>
+          <a href="/secondstories/<%= secondstory.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_secondstory/<%= secondstory.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Reinterpretation #<%= @reinterpretation.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Connector</dt>
+      <dd><%= @reinterpretation.connector %></dd>
+
+      <dt>Assumption</dt>
+      <dd><%= @reinterpretation.assumption_id %></dd>
+
+      <dt>Body</dt>
+      <dd><%= @reinterpretation.body %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/reinterpretations" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/reinterpretations/<%= @reinterpretation.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_reinterpretation/<%= @reinterpretation.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
